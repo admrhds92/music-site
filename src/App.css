@@ -2,9 +2,15 @@
   text-align: center;
 }
 
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.musicCard:hover {
+  transform: translateY(-5px);
 }
 
 @media (prefers-reduced-motion: no-preference) {
