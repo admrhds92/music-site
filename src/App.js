@@ -1,12 +1,14 @@
 import React from "react";
 import "./App.css";
 import header_pic from "./media/header_pic.jpg";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import copy from "copy-to-clipboard";
 
 const styles = {
   app: {
     textAlign: "center",
-    backgroundColor: "#e8e8e8",
+    backgroundColor: "white",
   },
   header: {
     // backgroundColor: "#282c34",
@@ -20,7 +22,7 @@ const styles = {
   bioSection: {
     padding: "20px",
     textAlign: "center",
-    
+
     display: "flex",
     justifyContent: "center",
   },
@@ -36,12 +38,13 @@ const styles = {
     background: "#e0e0e0",
     width: "300px",
     // backgroundColor: "rgba(65, 65, 65, 0.308)",
-    boxShadow: "25px 25px 30px #bebebe", // Add box shadow for 3D effect
+    boxShadow: "10px 10px 2px #bebebe", // Add box shadow for 3D effect
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
     alignItems: "center",
     textAlign: "left",
+    padding: "20px",
 
     // You can add more styles as needed
   },
@@ -50,6 +53,7 @@ const styles = {
     overflow: "hidden",
     width: "250px",
     height: "200px",
+    boxShadow: "5px 5px 2px #bebebe",
   },
 };
 
@@ -66,24 +70,38 @@ function App() {
     },
     // Add more entries for additional songs
   ];
+
+  const copyToClipboard = (e) => {
+    e.preventDefault();
+    let copyText = "admrhds92@gmail.com";
+    let isCopy = copy(copyText);
+    if (isCopy) {
+      toast.success("Adam Rhodes email copied to clipboard!");
+    }
+  };
   return (
     <div style={styles.app}>
+      <h2>ADAM RHODES GUITAR</h2>
       <header style={styles.header}>
-        {/* Your big image and header */}
-        <img src={header_pic} alt="Your Name" style={styles.headerImage} />
+        <img
+          src={header_pic}
+          alt="Nashville Skyline"
+          style={styles.headerImage}
+        />
       </header>
 
       {/* Bio Section */}
       <section style={styles.bioSection}>
-        
-        <p style={{width: '50%'}}>
-          Hello! My name is Adam Rhodes and I am a musician living in Nashville. I specialize in lead guitar playing country, blues, rock, jazz and more. Check out some of my playing below and if you are interested in working together find my socials below so that you can contact me.
+        <p style={{ width: "50%" }}>
+          Hey there! I'm Adam Rhodes, a musician soaking up the Nashville vibes.
+          I rock the lead guitar, jamming out in country, blues, rock, jazz, and
+          more. Check out my cool tunes below, and if you dig it and want to jam
+          together, hit me up on my socials. Let's make some music magic! 🎸✨
         </p>
       </section>
 
       {/* Cards Section */}
       <section>
-        <h2>Music Links</h2>
         <div style={styles.musicCards}>
           {/* Example Card */}
           <div style={styles.musicCard}>
@@ -147,7 +165,7 @@ function App() {
       <section
         style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
       >
-        <div class="card">
+        <div class="socialCard">
           <a
             href="https://www.instagram.com/admrhds92/"
             class="socialContainer containerOne"
@@ -166,7 +184,11 @@ function App() {
               <path d="M40,0H10C4.486,0,0,4.486,0,10v30c0,5.514,4.486,10,10,10h30c5.514,0,10-4.486,10-10V10C50,4.486,45.514,0,40,0z M39,17h-3 c-2.145,0-3,0.504-3,2v3h6l-1,6h-5v20h-7V28h-3v-6h3v-3c0-4.677,1.581-8,7-8c2.902,0,6,1,6,1V17z"></path>{" "}
             </svg>
           </a>
-          <a href="#" class="socialContainer containerFour">
+          <a
+            href="/"
+            class="socialContainer containerFour"
+            onClick={copyToClipboard}
+          >
             <svg class="socialSvg emailSvg" viewBox="0 0 8 6">
               {" "}
               <path d="m0 0h8v6h-8zm.75 .75v4.5h6.5v-4.5zM0 0l4 3 4-3v1l-4 3-4-3z"></path>{" "}
