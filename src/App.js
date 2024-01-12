@@ -35,7 +35,7 @@ const styles = {
   },
   musicCard: {
     borderRadius: "30px",
-    background: "#e0e0e0",
+    background: "#f1f1f1",
     width: "300px",
     // backgroundColor: "rgba(65, 65, 65, 0.308)",
     boxShadow: "10px 10px 2px #bebebe", // Add box shadow for 3D effect
@@ -81,7 +81,7 @@ function App() {
   };
   return (
     <div style={styles.app}>
-      <h2>ADAM RHODES GUITAR</h2>
+      
       <header style={styles.header}>
         <img
           src={header_pic}
@@ -93,8 +93,8 @@ function App() {
       {/* Bio Section */}
       <section style={styles.bioSection}>
         <p style={{ width: "50%" }}>
-          Hey there! I'm Adam Rhodes, a musician soaking up the Nashville vibes.
-          I rock the lead guitar, jamming out in country, blues, rock, jazz, and
+          Hey there! I'm Adam Rhodes, a musician in the Nashville area.
+          I play lead and rhythm guitar, jamming out in country, blues, rock, jazz, and
           more. Check out my cool tunes below, and if you dig it and want to jam
           together, hit me up on my socials. Let's make some music magic! 🎸✨
         </p>
